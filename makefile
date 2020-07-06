@@ -4,7 +4,9 @@ TEST = bin/test.exe
 DIR_SRC = build/src
 DIR_TEST = build/test
 
-FLAGS = -Wall -Werror --std=c++17
+SOURCES = $(DIR_SRC)/main.o $(DIR_SRC)/get_path.o
+
+FLAGS = -Wall -Werror --std=c++17 -lstdc++fs
 
 OBJ = g++ $(FLAGS) -c $^ -o $@
 
@@ -15,12 +17,13 @@ all: makeDir $(EXE)
 makeDir:
 	mkdir -p bin/ build/src build/test
 
-$(EXE): $(DIR_SRC)/main.o
+$(EXE): $(SOURCES)
 	g++ $(FLAGS) $^ -o $@
 
 $(DIR_SRC)/main.o: src/main.cpp
 	$(OBJ)
-
+$(DIR_SRC)/get_path.o: src/get_path.cpp
+	$(OBJ)
 
 clean:
 	rm -r bin/ 

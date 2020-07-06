@@ -6,7 +6,7 @@
 
 namespace fs = std::filesystem;
 
-void get_path(std::string Folder, fs::path FolderDirectiry);
-bool check_path(fs::path FolderDirectiry);
+void get_path(const std::string Folder, fs::path& FolderDirectory);
+bool check_path(fs::path FolderDirectory);
 
 #endif

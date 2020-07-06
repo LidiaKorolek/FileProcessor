@@ -1,15 +1,15 @@
 #include "get_path.h"
 
-void get_path(std::string Folder, fs::path FolderDirectiry)
+void get_path(const std::string Folder, fs::path& FolderDirectiry)
 {
     FolderDirectiry = fs::absolute(fs::u8path(Folder));
 }
 
-bool check_path(fs::path FolderDirectiry)
+bool check_path(fs::path FolderDirectory)
 {
-    if (fs::exists(FolderDirectiry)) {
+    if (fs::exists(FolderDirectory)) {
         return true;
+    } else {
+        return false;
     }
-
-    return false;
 }

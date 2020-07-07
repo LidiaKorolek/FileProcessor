@@ -1,12 +1,12 @@
-EXE = bin/FileProcessor.exe
-TEST = bin/test.exe
+EXE = bin/FileProcessor
+TEST = bin/test
 
 DIR_SRC = build/src
 DIR_TEST = build/test
 
 SOURCES = $(DIR_SRC)/main.o $(DIR_SRC)/get_path.o
 
-FLAGS = -Wall -Werror --std=c++17 -lstdc++fs
+FLAGS = -Wall -Werror --std=c++17
 
 OBJ = g++ $(FLAGS) -c $^ -o $@
 

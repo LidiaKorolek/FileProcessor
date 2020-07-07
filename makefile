@@ -4,7 +4,7 @@ TEST = bin/test
 DIR_SRC = build/src
 DIR_TEST = build/test
 
-SOURCES = $(DIR_SRC)/main.o $(DIR_SRC)/get_path.o
+SOURCES = $(DIR_SRC)/main.o $(DIR_SRC)/main_menu.o $(DIR_SRC)/check_path.o 
 
 FLAGS = -Wall -Werror --std=c++17
 
@@ -22,7 +22,9 @@ $(EXE): $(SOURCES)
 
 $(DIR_SRC)/main.o: src/main.cpp
 	$(OBJ)
-$(DIR_SRC)/get_path.o: src/get_path.cpp
+$(DIR_SRC)/main_menu.o: src/main_menu.cpp
+	$(OBJ)
+$(DIR_SRC)/check_path.o: src/check_path.cpp
 	$(OBJ)
 
 clean:

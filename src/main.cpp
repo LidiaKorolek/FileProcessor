@@ -7,12 +7,6 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-#ifdef _WIN32
-auto& out = wcout;
-#else
-auto& out = cout;
-#endif
-
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -20,19 +14,19 @@ int main()
     string Folder;
     fs::path FolderDirectory;
 
-    out << L"Ââåäèòå ïîëíûé ïóòü äî ïàïêè:\n";
+    wcout << L"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ð¿ÑƒÑ‚ÑŒ Ð´Ð¾ Ð¿Ð°Ð¿ÐºÐ¸:\n";
     cin >> Folder;
 
     get_path(Folder, FolderDirectory);
     if (!check_path(FolderDirectory)) {
-        out << L"\nÒàêàÿ ïàïêà íå ñóùåñòâóåò!\n";
+        wcout << L"\nÐ¢Ð°ÐºÐ°Ñ Ð¿Ð°Ð¿ÐºÐ° Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚!\n";
 
-        out << L"\nÍàæìèòå Enter ÷òîáû ïðîäîëæèòü\n";
+        wcout << L"\nÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Enter Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ\n";
         string pause;
         cin.ignore();
         getline(std::cin, pause);
     }
-    out << L"\nÒàêàÿ ïàïêà ñóùåñòâóåò!\n\n";
+    wcout << L"\nÐ¢Ð°ÐºÐ°Ñ Ð¿Ð°Ð¿ÐºÐ° ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚!\n\n";
 
     return 0;
 }

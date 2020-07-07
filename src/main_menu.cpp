@@ -9,45 +9,45 @@ void main_menu()
     int UserChoose;
 
     while (MenuState) {
-        std::wcout << L"\n  1. Íà÷àòü ðàáîòó\n"
-                   << L"  2. Î ïðîãðàììå\n"
-                   << L"  3. Îá àâòîðàõ\n"
-                   << L"  4. Âûõîä\n  >> ";
+        std::wcout << L"\n  1. ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ\n"
+                   << L"  2. Ðž Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ðµ\n"
+                   << L"  3. ÐžÐ± Ð°Ð²Ñ‚Ð¾Ñ€Ð°Ñ…\n"
+                   << L"  4. Ð’Ñ‹Ñ…Ð¾Ð´\n  >> ";
         std::cin >> UserChoose;
 
         switch (UserChoose) {
         case 1: {
-            std::wcout << L"\n  Ââåäèòå ïîëíûé ïóòü äî ïàïêè:\n  ";
+            std::wcout << L"\n  Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ð¿ÑƒÑ‚ÑŒ Ð´Ð¾ Ð¿Ð°Ð¿ÐºÐ¸:\n  ";
             std::cin >> Folder;
 
             FolderDirectory = fs::absolute(fs::u8path(Folder));
 
             if (!check_path(FolderDirectory)) {
-                std::wcout << L"\n  Òàêàÿ ïàïêà íå ñóùåñòâóåò!\n";
+                std::wcout << L"\n  Ð¢Ð°ÐºÐ°Ñ Ð¿Ð°Ð¿ÐºÐ° Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚!\n";
             }
             break;
         }
         case 2: {
-            // Íóæíî ÷òî-òî íàïèñàòü
-            std::wcout << L"\n  Çàãëóøêà äëÿ èíôû î ïðîãå\n";
+            // ÐÑƒÐ¶Ð½Ð¾ Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð½Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ
+            std::wcout << L"\n  Ð—Ð°Ð³Ð»ÑƒÑˆÐºÐ° Ð´Ð»Ñ Ð¸Ð½Ñ„Ñ‹ Ð¾ Ð¿Ñ€Ð¾Ð³Ðµ\n";
             break;
         }
         case 3: {
-            // Òóò òîæå íóæíî ÷òî-òî íàïèñàòü
-            std::wcout << L"\n  Çàãëóøêà äëÿ èíôû îá àâòîðàõ\n";
+            // Ð¢ÑƒÑ‚ Ñ‚Ð¾Ð¶Ðµ Ð½ÑƒÐ¶Ð½Ð¾ Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð½Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ
+            std::wcout << L"\n  Ð—Ð°Ð³Ð»ÑƒÑˆÐºÐ° Ð´Ð»Ñ Ð¸Ð½Ñ„Ñ‹ Ð¾Ð± Ð°Ð²Ñ‚Ð¾Ñ€Ð°Ñ…\n";
             break;
         }
         case 4: {
             MenuState = false;
 
-            std::wcout << L"\n  Íàæìèòå Enter ÷òîáû ïðîäîëæèòü\n  ";
+            std::wcout << L"\n  ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Enter Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ\n  ";
             std::string pause;
             std::cin.ignore();
             std::getline(std::cin, pause);
             break;
         }
         default: {
-            std::wcout << L"\n  Îøèáêà ââîäà!\n";
+            std::wcout << L"\n  ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°!\n";
             break;
         }
         }

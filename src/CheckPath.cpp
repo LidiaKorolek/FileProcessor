@@ -1,6 +1,6 @@
 #include "CheckPath.h"
 
-bool check_path(fs::path FolderDirectory)
+bool CheckPath(const fs::path FolderDirectory)
 {
     if (fs::exists(FolderDirectory)) {
         return true;

@@ -6,6 +6,6 @@
 
 namespace fs = std::filesystem;
 
-bool check_path(fs::path FolderDirectory);
+bool CheckPath(const fs::path FolderDirectory);
 
 #endif

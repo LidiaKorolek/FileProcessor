@@ -23,31 +23,41 @@ void main_menu()
             FolderDirectory = fs::absolute(fs::u8path(Folder));
 
             if (!check_path(FolderDirectory)) {
-                std::wcout << L"\n  Такая папка не существует!\n";
+                std::wcout << L"\n  Такая папка не существует!\n  ";
+                system("pause");
+                system("cls");
+                break;
             }
+            std::cout << "  ";
+            system("pause");
+            system("cls");
             break;
         }
         case 2: {
             // Нужно что-то написать
-            std::wcout << L"\n  Заглушка для инфы о проге\n";
+            std::wcout << L"\n  Заглушка для инфы о проге\n  ";
+            system("pause");
+            system("cls");
             break;
         }
         case 3: {
             // Тут тоже нужно что-то написать
-            std::wcout << L"\n  Заглушка для инфы об авторах\n";
+            std::wcout << L"\n  Заглушка для инфы об авторах\n  ";
+            system("pause");
+            system("cls");
             break;
         }
         case 4: {
             MenuState = false;
-
-            std::wcout << L"\n  Нажмите Enter чтобы продолжить\n  ";
-            std::string pause;
-            std::cin.ignore();
-            std::getline(std::cin, pause);
+            std::cout << "  ";
+            system("pause");
+            system("cls");
             break;
         }
         default: {
-            std::wcout << L"\n  Ошибка ввода!\n";
+            std::wcout << L"\n  Ошибка ввода!\n  ";
+            system("pause");
+            system("cls");
             break;
         }
         }

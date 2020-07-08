@@ -1,4 +1,4 @@
-#include "check_path.h"
+#include "CheckPath.h"
 
 bool check_path(fs::path FolderDirectory)
 {
